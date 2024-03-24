@@ -19,3 +19,28 @@
 ### 确认更改：
 使用 crontab -l 再次查看，确认可疑的任务已被注释掉或删除。  
 
+## 检查并移除可疑的 crontab 任务
+### 检查当前用户的 crontab
+### 列出 crontab 任务：
+打开终端并运行以下命令来查看当前用户的 crontab 任务：  
+```
+crontab -l
+```
+
+这将列出所有为当前用户计划的 cron 任务。
+
+## 查看特定用户的 crontab（如 root 用户或其他用户）：
+如果你有适当的权限，可以查看其他用户的 crontab 任务。对于 root 用户或任何特定用户，使用：  
+```
+crontab -u username -l
+```
+将 username 替换为你想要检查的用户的用户名。  
+
+## 检查系统范围的 cron 任务
+
+系统管理员还应检查系统范围内的 cron 任务，这些任务可能位于以下目录中：  
+
+/etc/crontab：系统的主 cron 表。 
+/etc/cron.d/：包含额外 cron 任务配置的目录。   
+/etc/cron.daily/, /etc/cron.hourly/, /etc/cron.weekly/, /etc/cron.monthly/：按时间周期执行任务的目录。  
+你可以使用 ls 和 cat 命令来列出和查看这些目录和文件中的任务。  
