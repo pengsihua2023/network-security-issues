@@ -44,3 +44,6 @@ crontab -u username -l
 /etc/cron.d/：包含额外 cron 任务配置的目录。   
 /etc/cron.daily/, /etc/cron.hourly/, /etc/cron.weekly/, /etc/cron.monthly/：按时间周期执行任务的目录。  
 你可以使用 ls 和 cat 命令来列出和查看这些目录和文件中的任务。  
+```
+/usr/local/tomcat/apache-tomcat-9.0.59/webapps/mRNA
+```
