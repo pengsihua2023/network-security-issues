@@ -45,5 +45,34 @@ crontab -u username -l
 /etc/cron.daily/, /etc/cron.hourly/, /etc/cron.weekly/, /etc/cron.monthly/：按时间周期执行任务的目录。  
 你可以使用 ls 和 cat 命令来列出和查看这些目录和文件中的任务。  
 ```
-/usr/local/tomcat/apache-tomcat-9.0.59/webapps/mRNA
+/usr/local/tomcat/apache-tomcat-9.0.59/
 ```
+##
+黑客总是修改我的crontab:
+```
+5 6 * * 0 /root/.configrc5/a/upd>/dev/null 2>&1
+@reboot /root/.configrc5/a/upd>/dev/null 2>&1
+5 8 * * 0 /root/.configrc5/b/sync>/dev/null 2>&1
+@reboot /root/.configrc5/b/sync>/dev/null 2>&1
+0 0 */3 * * /tmp/.X2k5-unix/.rsync/c/aptitude>/dev/null 2>&1
+```
+## 检查和删除恶意脚本
+删除列在你crontab中的所有恶意文件和脚本。你提到的路径例如/root/.configrc5/和/tmp/.X2k5-unix/都应该被彻底检查和清除。
+
+使用命令find来帮助寻找和删除这些文件：
+```
+sudo find / -name ".configrc5" -exec rm -rf {} \;
+sudo find / -name ".X2k5-unix" -exec rm -rf {} \;
+```
+## 清理Crontab
+编辑你的crontab（crontab -e），删除所有未授权的任务。  
+检查系统范围内的crontab配置，在/etc/crontab和/etc/cron.*/*。  
+## 检查其他启动项
+确保没有其他机制被黑客用来持续执行恶意软件。检查如/etc/rc.local、~/.bash_profile、~/.bashrc等文件，移除任何可疑的条目。  
+## 更新系统和软件
+确保你的操作系统和所有应用软件都更新到最新版本。未修补的漏洞往往是黑客利用的途径。  
+## 改变密码
+更改你的系统用户密码，特别是root用户的密码。确保使用强密码。  
+如果你使用SSH密钥进行远程访问，考虑更换你的SSH密钥。  
+## 安装和运行安全扫描工具
+使用如ClamAV（一个开源的病毒扫描工具）和Rootkit Hunter等工具扫描系统，以发现和移除已知的恶意软件和rootkit。  
