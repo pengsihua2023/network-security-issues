@@ -75,3 +75,10 @@ sudo find / -name ".X2k5-unix" -exec rm -rf {} \;
 如果你使用SSH密钥进行远程访问，考虑更换你的SSH密钥。  
 ## 安装和运行安全扫描工具
 使用如ClamAV（一个开源的病毒扫描工具）和Rootkit Hunter等工具扫描系统，以发现和移除已知的恶意软件和rootkit。  
+
+# 如何禁用cron服务？
+```
+sudo systemctl disable cron
+sudo systemctl stop cron
+
+```
