@@ -47,8 +47,7 @@ crontab -u username -l
 ```
 /usr/local/tomcat/apache-tomcat-9.0.59/
 ```
-##
-黑客总是修改我的crontab:
+# 黑客总是修改我的crontab:
 ```
 5 6 * * 0 /root/.configrc5/a/upd>/dev/null 2>&1
 @reboot /root/.configrc5/a/upd>/dev/null 2>&1
