@@ -64,7 +64,7 @@ sudo find / -name ".configrc5" -exec rm -rf {} \;
 sudo find / -name ".X2k5-unix" -exec rm -rf {} \;
 ```
 ## 清理Crontab
-编辑你的crontab（crontab -e），删除所有未授权的任务。  
+编辑你的crontab（crontab -e），删除所有未授权的任务。   
 检查系统范围内的crontab配置，在/etc/crontab和/etc/cron.*/*。  
 ## 检查其他启动项
 确保没有其他机制被黑客用来持续执行恶意软件。检查如/etc/rc.local、~/.bash_profile、~/.bashrc等文件，移除任何可疑的条目。  
